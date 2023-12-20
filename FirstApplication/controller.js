@@ -1,5 +1,5 @@
 var app = angular.module("myApp",[]);
-app.controller('firstController',function($scope, additionService,subtractionService,multiplicationService,divisionSrvice) {
+app.controller('firstController',function($scope,calculatorService) {
     $scope.message = "simple Calculator";
 
     $scope.do = function(operation) {
@@ -14,37 +14,37 @@ app.controller('firstController',function($scope, additionService,subtractionSer
     
         switch(operation) {
             case 'addition':
-                $scope.total = additionService.addition(first,second);
+                $scope.total = calculatorService.addition(first,second);
                 break;
             case 'subtraction':
-                $scope.total = subtractionService.subtraction(first,second);
+                $scope.total = calculatorService.subtraction(first,second);
                 break;
             case 'multiplication':
-                $scope.total = multiplicationService.multiplication(first,second);
+                $scope.total = calculatorService.multiplication(first,second);
                 break;
             case 'division':
-                $scope.total = divisionSrvice.division(first,second);
+                $scope.total = calculatorService.division(first,second);
                 break;
         }
     };
 });
-app.service('additionService',function() {
-    this.addition = function(first,second) {
-        return first + second;
-    }
-});
-app.service('subtractionService',function() {
-    this.subtraction = function(first,second) {
-        return first - second;
-    }
-});
-app.service('multiplicationService',function() {
-    this.multiplication = function(first,second) {
-        return first * second;
-    }
-});
-app.service('divisionSrvice',function() {
-    this.division = function(first,second) {
-        return first / second;
-    }
-})
+// app.service('additionService',function() {
+//     this.addition = function(first,second) {
+//         return first + second;
+//     }
+// });
+// app.service('subtractionService',function() {
+//     this.subtraction = function(first,second) {
+//         return first - second;
+//     }
+// });
+// app.service('multiplicationService',function() {
+//     this.multiplication = function(first,second) {
+//         return first * second;
+//     }
+// });
+// app.service('divisionSrvice',function() {
+//     this.division = function(first,second) {
+//         return first / second;
+//     }
+// })

@@ -18,3 +18,6 @@ as above we're creating a service.
 ->app.service() takes to parameters one is service name and another once is function.
 ->function() { ... }: This is the constructor function for the service. When AngularJS creates an instance of the service, it invokes this function.
 This function can contain properties and methods that define the behavior of the service.
+
+i have made new changes that,creating separate  service called calculatorService and used it in controller "first controller".
+where one service javascript file contains all the methods called addition,subtraction,multiplication and division.
